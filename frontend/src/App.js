@@ -329,19 +329,6 @@ function App() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-8"
-          style={{ color: 'var(--text-muted)' }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 flex justify-center pt-2" style={{ borderColor: 'var(--border)' }}>
-            <div className="w-1 h-2 rounded-full" style={{ backgroundColor: 'var(--primary)' }} />
-          </div>
-        </motion.div>
-      </section>
-
       {/* Problem/Solution Section */}
       <section className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
