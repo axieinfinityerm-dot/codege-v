@@ -1,0 +1,100 @@
+{
+  "theme": "Dark",
+  "archetype": "4/5 Hybrid (Swiss High-Contrast / Premium SaaS)",
+  "color_palette": {
+    "background": "#030712",
+    "surface": "#0f172a",
+    "surface_hover": "#1e293b",
+    "primary": "#3b82f6",
+    "primary_glow": "#60a5fa",
+    "accent": "#06b6d4",
+    "text_main": "#f8fafc",
+    "text_muted": "#94a3b8",
+    "border": "#1e293b"
+  },
+  "typography": {
+    "headings": "Outfit",
+    "body": "Manrope",
+    "mono": "JetBrains Mono"
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "border_radius": "rounded-2xl",
+    "bento_gap": "gap-6 md:gap-8"
+  },
+  "components": {
+    "header": {
+      "style": "fixed top-0 w-full z-50 backdrop-blur-xl bg-slate-950/70 border-b border-slate-800/50 transition-all"
+    },
+    "hero": {
+      "layout": "min-h-[90vh] flex flex-col justify-center items-center text-center pt-24 relative overflow-hidden",
+      "h1_classes": "text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 mb-8",
+      "subtitle_classes": "text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed",
+      "primary_btn": "bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-medium transition-all shadow-[0_0_24px_rgba(59,130,246,0.4)] hover:shadow-[0_0_32px_rgba(59,130,246,0.6)]",
+      "secondary_btn": "bg-transparent border border-slate-700 hover:border-slate-500 hover:bg-slate-800/50 text-white px-8 py-4 rounded-full font-medium transition-all"
+    },
+    "bento_cards": {
+      "base": "bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden group",
+      "hover_effect": "shadow-2xl shadow-blue-500/5"
+    }
+  },
+  "animations": {
+    "scroll": "framer-motion staggered whileInView with opacity and y-axis translation",
+    "micro_interactions": "scale-up on hover, animated border tracing on premium feature cards",
+    "parallax": "subtle y-axis background image movement on scroll"
+  },
+  "images": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1761652661873-a08d8cb25b66?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGRhcmslMjBibHVlJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NzQ1MjMwODV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract glowing blue orb. Use as an absolute positioned, low opacity (e.g. 20%), blurred background image behind the hero text to create a deep, premium atmospheric glow.",
+      "placement": "Hero Section Background"
+    },
+    "project_btk": {
+      "url": "https://images.pexels.com/photos/5876546/pexels-photo-5876546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Data dashboard screen",
+      "placement": "Project Showcase - BTK Site Sorgu Botu"
+    },
+    "project_axiemaps": {
+      "url": "https://images.unsplash.com/photo-1774388795239-f1b3329717d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbWFwJTIwZGFya3xlbnwwfHx8fDE3NzQ1MjMwODd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract blue and green pattern",
+      "placement": "Project Showcase - Axiemaps"
+    },
+    "project_whoiser": {
+      "url": "https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Data center servers",
+      "placement": "Project Showcase - Whoiser"
+    }
+  },
+  "features": {
+    "telegram_button": "Floating bottom-right, distinct blue/cyan gradient, with pulse animation. Link to https://t.me/egecz",
+    "dark_mode_toggle": "Include in header, default should be dark mode.",
+    "smooth_scroll": "Use 'lenis' package for momentum scrolling."
+  },
+  "content_requirements": {
+    "language": "Turkish",
+    "sections": [
+      "1. HERO SECTION - Big bold headline, 2 CTA buttons",
+      "2. PROBLEM/SOLUTION - Split layout, left problems, right solutions",
+      "3. SERVICES - 4 bento cards (AI Agent, Workflow, Scraping, Web/Mobile)",
+      "4. PROJECT SHOWCASE - 3 projects (BTK, Axiemaps, Whoiser) using provided images",
+      "5. AUTOMATION CAPABILITIES - Bulleted list",
+      "6. PERFORMANCE - Focus on 7/24, speed, scalability",
+      "7. DIFFERENTIATION - Bold large typography statement",
+      "8. HOW IT WORKS - 4 clear steps",
+      "9. PRICING - 3 tiers (Starter, Growth, Full Automation) with tracing border on middle tier",
+      "10. FINAL CTA - High impact, footer area"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly write all UI copy in Turkish.",
+    "Implement the landing page primarily using custom Tailwind CSS HTML elements (div, section) for highly creative layouts like Bento Grids and asymmetrical hero sections. Avoid Shadcn Cards if they restrict layout.",
+    "Use Phosphor Icons or Lucide React for modern, crisp tech icons.",
+    "Add 'data-testid' to all buttons, links, and forms for automated testing.",
+    "Include google fonts 'Outfit' and 'Manrope' in your HTML/CSS.",
+    "Value proposition 'Manuel işleri ortadan kaldıran sistemler kuruyorum' (I build systems that replace manual work) must be prominent.",
+    "Ensure dark + blue tones are rigorously applied, creating a 'Premium Tech/SaaS' aesthetic.",
+    "Make the floating Telegram button extremely obvious with a pulsing animation.",
+    "Install and integrate Framer Motion for scroll reveals."
+  ]
+}

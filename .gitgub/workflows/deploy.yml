@@ -1,0 +1,49 @@
+name: GitHub'dan Sunucuya Otomatik Yayın (CI/CD)
+
+on:
+  push:
+    branches:
+      - main  # Eğer senin ana dalın 'master' ise burayı master yap
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kodu GitHub'dan Çek
+        uses: actions/checkout@v3
+
+      - name: Node.js Kur
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Senin projenin Node versiyonu
+
+      - name: React Build Al (Derleme)
+        run: |
+          cd frontend
+          npm install
+          npm run build
+        # Bu aşamada 'frontend/build' klasörü oluşur
+
+      - name: Dosyaları Sunucuya Gönder (SCP)
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "frontend/build/*"
+          target: "/var/www/portfolio"
+          strip_components: 2 # 'frontend/build' kısmını siler, sadece içindekileri atar
+
+      - name: Sunucuda Nginx ve İzinleri Güncelle
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Klasör izinlerini Nginx'e (www-data) ver
+            chown -R www-data:www-data /var/www/portfolio
+            chmod -R 755 /var/www/portfolio
+            # Nginx'i yenile
+            systemctl restart nginx
