@@ -3,7 +3,7 @@ name: GitHub'dan Sunucuya Otomatik Yayın (CI/CD)
 on:
   push:
     branches:
-      - main  # Senin ana dalın hangisiyse (main veya master)
+      - main
 
 jobs:
   build-and-deploy:
@@ -13,17 +13,19 @@ jobs:
       - name: Kodu GitHub'dan Çek
         uses: actions/checkout@v3
 
-      - name: Node.js Kur
+      - name: Node.js Kur (Versiyon 20)
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20' # BURAYI 20 YAPTIK (Gerekli)
 
       - name: React Build Al
         run: |
           cd frontend
+          # Önce temizlik yapıp sonra bağımlılıkları kuralım
           npm install --legacy-peer-deps
+          # Eksik olan ajv paketini zorla ekleyelim (Hata çözümü)
+          npm install ajv --legacy-peer-deps 
           npm run build
-        # Bu aşamada GitHub'ın içinde 'frontend/build' klasörü oluştu
 
       - name: Dosyaları Sunucuya Gönder (SCP)
         uses: appleboy/scp-action@master
@@ -33,7 +35,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "frontend/build/*"
           target: "/var/www/portfolio"
-          strip_components: 2 # 'frontend/build' kısmını atar, içeriği direkt portfolio'ya koyar
+          strip_components: 2
 
       - name: Sunucuda İzinleri ve Nginx'i Güncelle
         uses: appleboy/ssh-action@master
@@ -42,8 +44,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Portfolyo klasörünü temizle ve yeni dosyaların sahibi Nginx olsun
             chown -R www-data:www-data /var/www/portfolio
             chmod -R 755 /var/www/portfolio
-            # Nginx'i tazele
             systemctl restart nginx
