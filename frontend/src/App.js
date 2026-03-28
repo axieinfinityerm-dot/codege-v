@@ -131,7 +131,7 @@ function App() {
     { num: "02", title: "Planlama", description: "Optimum otomasyon stratejisi oluşturuyorum." },
     { num: "03", title: "Geliştirme", description: "Özel sistemler geliştiriyorum." },
     { num: "04", title: "Otomasyon", description: "Sistemi devreye alıp optimize ediyorum." }
-    { num: "05", title: "Marketing", description: "Gelişmiş Chatbotlar ile Telegram, WhatsApp Instagram gibi ortamlarda insansı yapay zeka asistan" }
+    { num: "05", title: "Marketing", description: "Gelişmiş Chatbotlar ile Telegram, WhatsApp Instagram gibi ortamlarda insansı yapay zeka asistanı" }
   ];
 
   const pricing = [
