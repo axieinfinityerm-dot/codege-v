@@ -294,7 +294,7 @@ function App() {
             style={{ fontFamily: 'Outfit', lineHeight: 1.1 }}
             data-testid="hero-title"
           >
-            Manuel İşleri Ortadan<br />Kaldıran Sistemler
+            Manuel İşlerde İnsan Hatasını <br />Ortadan Kaldıran Sistemler
           </motion.h1>
 
           <motion.p 
@@ -303,8 +303,8 @@ function App() {
             style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}
             data-testid="hero-subtitle"
           >
-            AI Agent sistemleri, workflow otomasyonu ve özel yazılım çözümleri ile 
-            işletmenizin verimliliğini katbekat artırın.
+            AI Agent sistemleri, workflow otomasyonu, Phishing, Uptime Monitoring ve ihtiyaca özel yazılım çözümleri ile 
+            gambling platform verimliliğini katbekat artırın.
           </motion.p>
 
           <motion.div 
