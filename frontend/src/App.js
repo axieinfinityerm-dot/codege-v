@@ -100,13 +100,13 @@ function App() {
       title: "Axiemaps",
       description: "Coğrafi veri analizi ve haritalama platformu.",
       result: "Gerçek zamanlı veri görselleştirme",
-      image: "https://images.unsplash.com/photo-1774388795239-f1b3329717d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbWFwJTIwZGFya3xlbnwwfHx8fDE3NzQ1MjMwODd8MA&ixlib=rb-4.1.0&q=85"
+      image: "https://i.hizliresim.com/t0qtr3z.png&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbWFwJTIwZGFya3xlbnwwfHx8fDE3NzQ1MjMwODd8MA&ixlib=rb-4.1.0&q=85"
     },
     {
       title: "Whoiser Phishing Detection",
       description: "Domain ve phishing tespiti için gelişmiş güvenlik sistemi.",
-      result: "%99.2 doğruluk oranı",
-      image: "https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      result: "%99.2 doğruluk oranı ile altyapı içerisindeki Phishing hesapları yakalar",
+      image: "https://i.hizliresim.com/cya76vl.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     }
   ];
 
@@ -116,6 +116,7 @@ function App() {
     "KYC doğrulama",
     "Müşteri destek otomasyonu",
     "Sosyal medya otomasyonu"
+    "Marketing partner analiz otomasyonu"
   ];
 
   const stats = [
@@ -130,6 +131,7 @@ function App() {
     { num: "02", title: "Planlama", description: "Optimum otomasyon stratejisi oluşturuyorum." },
     { num: "03", title: "Geliştirme", description: "Özel sistemler geliştiriyorum." },
     { num: "04", title: "Otomasyon", description: "Sistemi devreye alıp optimize ediyorum." }
+    { num: "05", title: "Marketing", description: "Gelişmiş Chatbotlar ile Telegram, WhatsApp Instagram gibi ortamlarda insansı yapay zeka asistan" }
   ];
 
   const pricing = [
