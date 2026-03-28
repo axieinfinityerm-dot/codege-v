@@ -100,7 +100,7 @@ function App() {
       title: "Axiemaps",
       description: "Coğrafi veri analizi ve haritalama platformu.",
       result: "Gerçek zamanlı veri görselleştirme",
-      image: "https://i.hizliresim.com/t0qtr3z.png&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbWFwJTIwZGFya3xlbnwwfHx8fDE3NzQ1MjMwODd8MA&ixlib=rb-4.1.0&q=85"
+      image: "https://i.hizliresim.com/t0qtr3z.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       title: "Whoiser Phishing Detection",
