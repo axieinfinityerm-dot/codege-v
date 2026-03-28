@@ -91,10 +91,10 @@ function App() {
 
   const projects = [
     {
-      title: "BTK Site Sorgu Botu",
+      title: "Türkiye Odaklı Uptime Monitoring",
       description: "Telekomünikasyon altyapı sorgulamalarını otomatikleştiren bot sistemi.",
       result: "Günlük 10.000+ sorgu işleme kapasitesi",
-      image: "https://images.pexels.com/photos/5876546/pexels-photo-5876546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      image: "https://i.hizliresim.com/s2hhdww.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       title: "Axiemaps",
