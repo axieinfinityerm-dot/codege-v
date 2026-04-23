@@ -363,7 +363,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      <section id="about" className="py-16 md:py-24 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
@@ -400,7 +400,7 @@ function App() {
       </section>
 
       {/* History Section */}
-      <section className="py-24 md:py-32 px-6 bg-grid">
+      <section className="py-16 md:py-24 px-6 bg-grid">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
@@ -435,7 +435,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      <section id="services" className="py-16 md:py-24 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
@@ -482,7 +482,7 @@ function App() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 md:py-32 px-6 bg-grid">
+      <section className="py-16 md:py-20 px-6 bg-grid">
         <div className="max-w-7xl mx-auto">
           <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -502,26 +502,26 @@ function App() {
       </section>
 
       {/* Values Section */}
-      <section id="values" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      <section id="values" className="py-16 md:py-24 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
+          <motion.div {...fadeInUp} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
               Değerlerimiz
             </h2>
             <p style={{ color: 'var(--text-muted)' }}>Bizi farklı kılan temel ilkeler</p>
           </motion.div>
 
-          <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-8">
+          <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-6">
             {values.map((value, i) => (
               <motion.div
                 key={i}
                 {...fadeInUp}
-                className="text-center p-8 rounded-3xl card-hover"
+                className="text-center p-6 rounded-2xl card-hover"
                 style={{ backgroundColor: 'var(--background)', border: '1px solid var(--border)' }}
                 data-testid={`value-${i}`}
               >
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4"
                   style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)' }}
                 >
                   <span style={{ color: 'var(--primary)' }}>{value.icon}</span>
@@ -539,7 +539,7 @@ function App() {
       </section>
 
       {/* Culture Section */}
-      <section className="py-24 md:py-32 px-6 bg-grid">
+      <section className="py-16 md:py-24 px-6 bg-grid">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -586,7 +586,7 @@ function App() {
       </section>
 
       {/* Phishing Protection Feature */}
-      <section className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      <section className="py-16 md:py-24 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp} className="order-2 md:order-1">
@@ -640,7 +640,7 @@ function App() {
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="py-24 md:py-32 px-6 relative overflow-hidden bg-grid">
+      <section id="contact" className="py-16 md:py-24 px-6 relative overflow-hidden bg-grid">
         <div className="hero-orb" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div {...fadeInUp}>
