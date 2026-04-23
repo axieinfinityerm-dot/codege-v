@@ -11,7 +11,7 @@ import {
   TrendingUp, 
   Shield,
   Search,
-  FileCode,
+  Globe,
   Rocket,
   CheckCircle,
   Sun,
@@ -23,7 +23,16 @@ import {
   Target,
   Layers,
   Settings,
-  Play
+  Play,
+  Users,
+  Award,
+  Lightbulb,
+  Lock,
+  BarChart3,
+  Palette,
+  Share2,
+  AlertTriangle,
+  Building
 } from "lucide-react";
 
 // Telegram Icon Component
@@ -68,87 +77,98 @@ function App() {
 
   const services = [
     {
+      icon: <Search size={28} />,
+      title: "SEO",
+      subtitle: "Arama Motoru Optimizasyonu",
+      description: "Uzman ekibimiz ile markanızı arama motorlarında üst sıralara taşıyoruz.",
+      features: ["600+ destekleyici site altyapısı", "Güçlü backlink stratejileri", "Marka adı sıralama garantisi", "Gambling sektörüne özel SEO teknikleri"]
+    },
+    {
+      icon: <BarChart3 size={28} />,
+      title: "Dijital Pazarlama",
+      subtitle: "Marketing",
+      description: "Geniş network ağımız ile düşük maliyet, yüksek verim odaklı kampanyalar yürütüyoruz.",
+      features: ["Telegram, forum ve sosyal medya ağları", "Influencer ve yayıncı iş birlikleri", "Performans bazlı reklam stratejileri", "Hedef kitle odaklı büyüme"]
+    },
+    {
+      icon: <Share2 size={28} />,
+      title: "Sosyal Medya Yönetimi",
+      subtitle: "Social Media Management",
+      description: "Markanızı global ölçekte profesyonel şekilde konumlandırıyoruz.",
+      features: ["Çok dilli içerik üretimi", "Özgün tasarım ve paylaşım planı", "Etkileşim artırıcı kampanyalar", "Kurumsal marka yönetimi"]
+    },
+    {
+      icon: <Palette size={28} />,
+      title: "Grafik Tasarım",
+      subtitle: "Site Giydirme",
+      description: "Markanızın görsel kimliğini profesyonel tasarımlarla güçlendiriyoruz.",
+      features: ["Kurumsal kimlik tasarımı", "Web sitesi tasarımı", "Sosyal medya görselleri", "Banner ve reklam tasarımları"]
+    },
+    {
       icon: <Bot size={28} />,
-      title: "AI Agent Sistemleri",
-      description: "n8n ve Python tabanlı akıllı agent sistemleri ile iş süreçlerinizi otomatikleştirin."
+      title: "Yazılım Çözümleri",
+      subtitle: "Otomasyon Sistemleri",
+      description: "Tüm yazılım ihtiyaçlarınıza özel çözümler sunuyoruz.",
+      features: ["BTK site sorgu sistemi ile anlık bildirim", "Özel yazılım geliştirme", "Otomasyon ve takip sistemleri", "Entegre altyapı çözümleri"]
     },
     {
-      icon: <Workflow size={28} />,
-      title: "Workflow Otomasyonu",
-      description: "CRM, ödeme ve operasyon süreçlerinizi uçtan uca otomatik hale getirin."
-    },
-    {
-      icon: <Database size={28} />,
-      title: "Veri Toplama & Scraping",
-      description: "Web scraping ve veri sistemleri ile kritik verileri otomatik toplayın."
-    },
-    {
-      icon: <Smartphone size={28} />,
-      title: "Web & Mobil Uygulama",
-      description: ".NET ve Flutter ile yüksek performanslı web ve mobil uygulamalar geliştirin."
+      icon: <Shield size={28} />,
+      title: "Phishing Koruma",
+      subtitle: "Marka Güvenliği",
+      description: "Markanızı sahte sitelere karşı koruyoruz.",
+      features: ["Yeni açılan phishing sitelerin erken tespiti", "Yayına girmeden müdahale", "Marka güvenliği odaklı sistem", "Kullanıcı kaybını önleme"]
     }
   ];
 
-  const projects = [
+  const values = [
     {
-      title: "BTK Site Sorgu Botu",
-      description: "Telekomünikasyon altyapı sorgulamalarını otomatikleştiren bot sistemi.",
-      result: "Günlük 10.000+ sorgu işleme kapasitesi",
-      image: "https://images.pexels.com/photos/5876546/pexels-photo-5876546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      icon: <Award size={32} />,
+      title: "Güvenilirlik",
+      description: "Tüm süreçlerde şeffaf ve sürdürülebilir iş modeli ile ilerleriz."
     },
     {
-      title: "Axiemaps",
-      description: "Coğrafi veri analizi ve haritalama platformu.",
-      result: "Gerçek zamanlı veri görselleştirme",
-      image: "https://images.unsplash.com/photo-1774388795239-f1b3329717d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbWFwJTIwZGFya3xlbnwwfHx8fDE3NzQ1MjMwODd8MA&ixlib=rb-4.1.0&q=85"
+      icon: <Target size={32} />,
+      title: "Performans Odaklılık",
+      description: "Her çalışmada maksimum verim ve ölçülebilir sonuç hedeflenir."
     },
     {
-      title: "Whoiser Phishing Detection",
-      description: "Domain ve phishing tespiti için gelişmiş güvenlik sistemi.",
-      result: "%99.2 doğruluk oranı",
-      image: "https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      icon: <Lightbulb size={32} />,
+      title: "Yenilikçilik",
+      description: "Teknoloji ve pazarlama trendlerini yakından takip ederek sürekli gelişim sağlarız."
     }
   ];
 
-  const capabilities = [
-    "Bonus & kampanya otomasyonu",
-    "Ödeme / çekim sistemleri",
-    "KYC doğrulama",
-    "Müşteri destek otomasyonu",
-    "Sosyal medya otomasyonu"
+  const history = [
+    {
+      phase: "Başlangıç",
+      description: "Sektöre giriş yaparak gambling alanına özel çözümler geliştirmeye başladık."
+    },
+    {
+      phase: "Gelişim Süreci",
+      description: "SEO ve marketing alanında güçlü network oluşturduk ve aktif projeler yürüttük."
+    },
+    {
+      phase: "Büyüme",
+      description: "Yazılım ve otomasyon sistemleri geliştirerek hizmet kapsamımızı genişlettik."
+    },
+    {
+      phase: "Günümüz",
+      description: "Birden fazla markaya uçtan uca hizmet sağlayan, entegre çözümler sunan bir yapı haline geldik."
+    }
   ];
 
   const stats = [
-    { value: "7/24", label: "Kesintisiz Çalışma" },
-    { value: "10x", label: "Daha Hızlı İşlem" },
-    { value: "%90", label: "Düşük Sistem Yükü" },
-    { value: "∞", label: "Ölçeklenebilirlik" }
+    { value: "600+", label: "Destekleyici Site" },
+    { value: "7/24", label: "Kesintisiz Koruma" },
+    { value: "50+", label: "Aktif Marka" },
+    { value: "%99", label: "Müşteri Memnuniyeti" }
   ];
 
-  const steps = [
-    { num: "01", title: "Analiz", description: "İş süreçlerinizi detaylı analiz ediyorum." },
-    { num: "02", title: "Planlama", description: "Optimum otomasyon stratejisi oluşturuyorum." },
-    { num: "03", title: "Geliştirme", description: "Özel sistemler geliştiriyorum." },
-    { num: "04", title: "Otomasyon", description: "Sistemi devreye alıp optimize ediyorum." }
-  ];
-
-  const pricing = [
-    {
-      name: "Starter",
-      description: "Küçük ölçekli otomasyon projeleri için ideal başlangıç paketi.",
-      features: ["Tek workflow otomasyonu", "Temel entegrasyonlar", "E-posta desteği", "1 ay bakım"]
-    },
-    {
-      name: "Growth",
-      description: "Büyüyen işletmeler için kapsamlı otomasyon çözümleri.",
-      features: ["5 workflow otomasyonu", "AI Agent entegrasyonu", "Öncelikli destek", "3 ay bakım", "Özel dashboard"],
-      featured: true
-    },
-    {
-      name: "Full Automation",
-      description: "Tüm iş süreçlerinizi otomatikleştiren kurumsal çözüm.",
-      features: ["Sınırsız workflow", "Özel AI sistemleri", "7/24 destek", "1 yıl bakım", "Özel entegrasyonlar", "Danışmanlık"]
-    }
+  const culture = [
+    "Dinamik çalışma ortamı",
+    "Sürekli gelişim ve öğrenme",
+    "Ekip içi koordinasyon",
+    "Performans odaklı yaklaşım"
   ];
 
   const scrollToSection = (sectionId) => {
@@ -181,18 +201,18 @@ function App() {
             {/* Logo */}
             <a href="/" className="flex items-center gap-2" data-testid="logo">
               <span className="text-2xl font-bold" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-                Cod<span style={{ color: 'var(--primary)' }}>Ege</span>
+                CodEge<span style={{ color: 'var(--primary)' }}>Soft</span>
               </span>
             </a>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
-              {['Hizmetler', 'Projeler', 'Nasıl Çalışır', 'Fiyatlar'].map((item, i) => (
+              {['Hakkımızda', 'Hizmetler', 'Değerler', 'İletişim'].map((item, i) => (
                 <button
                   key={i}
-                  onClick={() => scrollToSection(['services', 'projects', 'how-it-works', 'pricing'][i])}
+                  onClick={() => scrollToSection(['about', 'services', 'values', 'contact'][i])}
                   className="nav-link text-sm font-medium"
-                  data-testid={`nav-${item.toLowerCase().replace(' ', '-')}`}
+                  data-testid={`nav-${item.toLowerCase()}`}
                 >
                   {item}
                 </button>
@@ -238,13 +258,13 @@ function App() {
             style={{ borderColor: 'var(--border)' }}
           >
             <div className="px-6 py-4 flex flex-col gap-4">
-              {['Hizmetler', 'Projeler', 'Nasıl Çalışır', 'Fiyatlar'].map((item, i) => (
+              {['Hakkımızda', 'Hizmetler', 'Değerler', 'İletişim'].map((item, i) => (
                 <button
                   key={i}
-                  onClick={() => scrollToSection(['services', 'projects', 'how-it-works', 'pricing'][i])}
+                  onClick={() => scrollToSection(['about', 'services', 'values', 'contact'][i])}
                   className="text-left py-2"
                   style={{ color: 'var(--text-muted)' }}
-                  data-testid={`mobile-nav-${item.toLowerCase().replace(' ', '-')}`}
+                  data-testid={`mobile-nav-${item.toLowerCase()}`}
                 >
                   {item}
                 </button>
@@ -282,7 +302,7 @@ function App() {
               }}
             >
               <Zap size={16} style={{ color: 'var(--primary)' }} />
-              Yazılım & Otomasyon Uzmanı
+              Dijital Büyüme & Yazılım Çözümleri
             </span>
           </motion.div>
 
@@ -292,7 +312,7 @@ function App() {
             style={{ fontFamily: 'Outfit', lineHeight: 1.1 }}
             data-testid="hero-title"
           >
-            Manuel İşleri Ortadan<br />Kaldıran Sistemler
+            Markaların Dijital Dünyada<br />Güvenli Büyümesi
           </motion.h1>
 
           <motion.p 
@@ -301,8 +321,8 @@ function App() {
             style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}
             data-testid="hero-subtitle"
           >
-            AI Agent sistemleri, workflow otomasyonu ve özel yazılım çözümleri ile 
-            işletmenizin verimliliğini katbekat artırın.
+            Geliştirdiğimiz yenilikçi stratejiler ve teknolojik çözümler ile 
+            iş ortaklarımıza rekabet avantajı kazandırıyoruz.
           </motion.p>
 
           <motion.div 
@@ -316,7 +336,7 @@ function App() {
               className="btn-primary flex items-center justify-center gap-2"
               data-testid="hero-cta-primary"
             >
-              Ücretsiz Analiz Al
+              Ücretsiz Danışmanlık
               <ChevronRight size={20} />
             </a>
             <button
@@ -342,93 +362,91 @@ function App() {
         </motion.div>
       </section>
 
-      {/* Problem/Solution Section */}
-      <section className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      {/* About Section */}
+      <section id="about" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Problem & Çözüm
+              Şirket Hakkında
             </h2>
-            <p style={{ color: 'var(--text-muted)' }}>İş süreçlerinizdeki darboğazları ortadan kaldırıyorum</p>
+            <p className="max-w-3xl mx-auto text-base md:text-lg" style={{ color: 'var(--text-muted)' }}>
+              Gambling sektörüne özel çözümler geliştiren ekibimiz, markaların dijitalde 
+              sürdürülebilir büyüme elde etmesini hedeflemektedir.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Problems */}
-            <motion.div 
-              {...fadeInUp}
-              className="p-8 rounded-3xl"
-              style={{ backgroundColor: 'var(--background)', border: '1px solid var(--border)' }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)' }}>
-                  <X size={20} style={{ color: '#ef4444' }} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: <Users size={24} />, text: "SEO, marketing ve yazılım alanlarında uzman ekip" },
+              { icon: <Globe size={24} />, text: "Uluslararası pazarlara uygun stratejik planlama" },
+              { icon: <Target size={24} />, text: "Yüksek performans odaklı çalışma modeli" },
+              { icon: <Shield size={24} />, text: "Güvenlik ve marka koruma çözümleri" }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                {...fadeInUp}
+                className="p-6 rounded-2xl card-hover"
+                style={{ backgroundColor: 'var(--background)', border: '1px solid var(--border)' }}
+                data-testid={`about-card-${i}`}
+              >
+                <div className="icon-container mb-4">
+                  {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold" style={{ color: 'var(--text-main)' }}>Sorunlar</h3>
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "Manuel ve tekrarlayan işler",
-                  "İnsan hatası riski",
-                  "Yavaş süreçler",
-                  "Ölçeklenme zorlukları",
-                  "Yüksek operasyonel maliyetler"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3" style={{ color: 'var(--text-muted)' }}>
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#ef4444' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+                <p style={{ color: 'var(--text-muted)' }}>{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Solutions */}
-            <motion.div 
-              {...fadeInUp}
-              className="p-8 rounded-3xl"
-              style={{ 
-                backgroundColor: 'var(--background)', 
-                border: '1px solid var(--primary)',
-                boxShadow: '0 0 40px rgba(59, 130, 246, 0.1)'
-              }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)' }}>
-                  <CheckCircle size={20} style={{ color: 'var(--primary)' }} />
+      {/* History Section */}
+      <section className="py-24 md:py-32 px-6 bg-grid">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
+              Tarihçe
+            </h2>
+            <p style={{ color: 'var(--text-muted)' }}>Başlangıçtan bugüne yolculuğumuz</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {history.map((item, i) => (
+              <motion.div
+                key={i}
+                {...fadeInUp}
+                className="relative"
+                data-testid={`history-${i}`}
+              >
+                <div className="p-6 rounded-2xl h-full" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}>
+                  <div className="step-number mb-4" style={{ width: '40px', height: '40px', fontSize: '1rem' }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-main)' }}>
+                    {item.phase}
+                  </h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold" style={{ color: 'var(--text-main)' }}>Çözümler</h3>
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "Tam otomatik iş akışları",
-                  "Hatasız sistemler",
-                  "Anlık işlem kapasitesi",
-                  "Sınırsız ölçeklenebilirlik",
-                  "Düşük operasyonel maliyet"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3" style={{ color: 'var(--text-muted)' }}>
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--primary)' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 md:py-32 px-6 bg-grid">
+      <section id="services" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Hizmetlerim
+              Hizmetlerimiz
             </h2>
-            <p style={{ color: 'var(--text-muted)' }}>İşletmenizi bir sonraki seviyeye taşıyacak çözümler</p>
+            <p style={{ color: 'var(--text-muted)' }}>Gambling sektörüne özel kapsamlı çözümler</p>
           </motion.div>
 
           <motion.div 
             {...staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {services.map((service, i) => (
               <motion.div
@@ -437,107 +455,42 @@ function App() {
                 className="service-card card-hover"
                 data-testid={`service-card-${i}`}
               >
-                <div className="icon-container mb-6">
+                <div className="icon-container mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-main)' }}>
+                <h3 className="text-lg font-semibold mb-1" style={{ color: 'var(--text-main)' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm" style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                <p className="text-sm mb-3" style={{ color: 'var(--primary)' }}>
+                  {service.subtitle}
+                </p>
+                <p className="text-sm mb-4" style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
                   {service.description}
                 </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+                      <CheckCircle size={14} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--primary)' }} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Projelerim
-            </h2>
-            <p style={{ color: 'var(--text-muted)' }}>Gerçek dünya problemlerine ürettiğim çözümler</p>
-          </motion.div>
-
-          <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <motion.div
-                key={i}
-                {...fadeInUp}
-                className="project-card group"
-                data-testid={`project-card-${i}`}
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="overlay flex flex-col justify-end p-6">
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-main)' }}>
-                    {project.title}
-                  </h3>
-                  <p className="text-sm mb-3" style={{ color: 'var(--text-muted)' }}>
-                    {project.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm" style={{ color: 'var(--primary)' }}>
-                    <TrendingUp size={16} />
-                    {project.result}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Automation Capabilities */}
+      {/* Stats Section */}
       <section className="py-24 md:py-32 px-6 bg-grid">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Otomasyon Yetenekleri
-            </h2>
-            <p style={{ color: 'var(--text-muted)' }}>Otomatikleştirebileceğim iş süreçleri</p>
-          </motion.div>
-
-          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {capabilities.map((cap, i) => (
-              <motion.div
-                key={i}
-                {...fadeInUp}
-                className="capability-item"
-                data-testid={`capability-${i}`}
-              >
-                <Zap size={20} style={{ color: 'var(--primary)' }} />
-                <span style={{ color: 'var(--text-main)' }}>{cap}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Performance Section */}
-      <section className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Performans
-            </h2>
-            <p style={{ color: 'var(--text-muted)' }}>Sistemlerimizin sağladığı avantajlar</p>
-          </motion.div>
-
           <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
                 {...fadeInUp}
                 className="stat-item rounded-2xl"
-                style={{ backgroundColor: 'var(--background)', border: '1px solid var(--border)' }}
+                style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
                 data-testid={`stat-${i}`}
               >
                 <div className="stat-value">{stat.value}</div>
@@ -548,119 +501,146 @@ function App() {
         </div>
       </section>
 
-      {/* Differentiation Section */}
-      <section className="py-24 md:py-32 px-6 bg-grid relative overflow-hidden">
-        <div className="hero-orb" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div {...fadeInUp}>
-            <h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-8"
-              style={{ fontFamily: 'Outfit', color: 'var(--text-main)', lineHeight: 1.2 }}
-              data-testid="differentiation-title"
-            >
-              "Çoğu geliştirici kod yazar.<br />
-              <span style={{ color: 'var(--primary)' }}>Ben iş yükünü ortadan kaldıran sistemler kurarım.</span>"
-            </h2>
-            <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Sadece yazılım geliştirmiyorum, işletmenizin operasyonel yükünü azaltan, 
-              ölçeklenebilir ve sürdürülebilir sistemler tasarlıyorum.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section id="how-it-works" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+      {/* Values Section */}
+      <section id="values" className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Nasıl Çalışır?
+              Değerlerimiz
             </h2>
-            <p style={{ color: 'var(--text-muted)' }}>4 adımda işletmenizi dönüştürün</p>
+            <p style={{ color: 'var(--text-muted)' }}>Bizi farklı kılan temel ilkeler</p>
           </motion.div>
 
-          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((step, i) => (
+          <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-8">
+            {values.map((value, i) => (
               <motion.div
                 key={i}
                 {...fadeInUp}
-                className="text-center p-6"
-                data-testid={`step-${i}`}
+                className="text-center p-8 rounded-3xl card-hover"
+                style={{ backgroundColor: 'var(--background)', border: '1px solid var(--border)' }}
+                data-testid={`value-${i}`}
               >
-                <div className="step-number mx-auto mb-6">{step.num}</div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-main)' }}>
-                  {step.title}
-                </h3>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-                  {step.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-24 md:py-32 px-6 bg-grid">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-              Paketler
-            </h2>
-            <p style={{ color: 'var(--text-muted)' }}>İhtiyacınıza uygun çözümü seçin</p>
-          </motion.div>
-
-          <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {pricing.map((plan, i) => (
-              <motion.div
-                key={i}
-                {...fadeInUp}
-                className={`p-8 rounded-3xl card-hover ${plan.featured ? 'pricing-featured' : ''}`}
-                style={{ 
-                  backgroundColor: 'var(--surface)', 
-                  border: plan.featured ? '2px solid transparent' : '1px solid var(--border)'
-                }}
-                data-testid={`pricing-card-${i}`}
-              >
-                {plan.featured && (
-                  <div 
-                    className="text-xs font-medium px-3 py-1 rounded-full inline-block mb-4"
-                    style={{ backgroundColor: 'var(--primary)', color: 'white' }}
-                  >
-                    Popüler
-                  </div>
-                )}
-                <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-main)' }}>
-                  {plan.name}
-                </h3>
-                <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
-                  {plan.description}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
-                      <CheckCircle size={16} style={{ color: 'var(--primary)' }} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="https://t.me/egecz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={plan.featured ? 'btn-primary w-full text-center block' : 'btn-secondary w-full text-center block'}
-                  data-testid={`pricing-cta-${i}`}
+                <div 
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)' }}
                 >
-                  Teklif Al
-                </a>
+                  <span style={{ color: 'var(--primary)' }}>{value.icon}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--text-main)' }}>
+                  {value.title}
+                </h3>
+                <p style={{ color: 'var(--text-muted)' }}>
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Culture Section */}
+      <section className="py-24 md:py-32 px-6 bg-grid">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeInUp}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
+                Kültürümüz
+              </h2>
+              <p className="mb-8" style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}>
+                Ekip içi iletişimi güçlü, hızlı aksiyon alan ve sonuç odaklı bir çalışma yapısı benimsiyoruz.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {culture.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 p-4 rounded-xl"
+                    style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
+                  >
+                    <CheckCircle size={20} style={{ color: 'var(--primary)' }} />
+                    <span style={{ color: 'var(--text-main)' }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="relative">
+              <div 
+                className="aspect-square rounded-3xl overflow-hidden"
+                style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <Building size={64} style={{ color: 'var(--primary)', margin: '0 auto' }} />
+                    <h3 className="text-2xl font-bold mt-6 mb-2" style={{ color: 'var(--text-main)' }}>
+                      CodEgeSoft
+                    </h3>
+                    <p style={{ color: 'var(--text-muted)' }}>
+                      Dijital Büyüme & Yazılım Çözümleri
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Phishing Protection Feature */}
+      <section className="py-24 md:py-32 px-6" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeInUp} className="order-2 md:order-1">
+              <div 
+                className="aspect-video rounded-3xl overflow-hidden flex items-center justify-center"
+                style={{ 
+                  background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)',
+                  border: '1px solid var(--border)' 
+                }}
+              >
+                <div className="text-center p-8">
+                  <Shield size={80} style={{ color: 'var(--primary)', margin: '0 auto' }} />
+                  <p className="mt-4 text-lg font-semibold" style={{ color: 'var(--text-main)' }}>
+                    Whoiser Phishing Detection
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="order-1 md:order-2">
+              <div 
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm mb-4"
+                style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}
+              >
+                <AlertTriangle size={14} />
+                Güvenlik Çözümü
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
+                Phishing Koruma ve Marka Güvenliği
+              </h2>
+              <p className="mb-6" style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}>
+                Siber tehditlere karşı Türkiye genelinde anlık koruma. Markanızı sahte sitelere karşı 
+                koruyarak kullanıcı kaybını önlüyoruz.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Yeni açılan phishing sitelerin erken tespiti",
+                  "Yayına girmeden müdahale",
+                  "BTK site sorgu sistemi entegrasyonu",
+                  "7/24 otomatik izleme ve bildirim"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3" style={{ color: 'var(--text-muted)' }}>
+                    <CheckCircle size={18} style={{ color: 'var(--primary)' }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 md:py-32 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--surface)' }}>
+      <section id="contact" className="py-24 md:py-32 px-6 relative overflow-hidden bg-grid">
         <div className="hero-orb" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div {...fadeInUp}>
@@ -669,11 +649,11 @@ function App() {
               style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}
               data-testid="final-cta-title"
             >
-              İşletmenizi Otomatikleştirmeye<br />Hazır mısınız?
+              Dijital Büyüme İçin<br />Hazır mısınız?
             </h2>
             <p className="text-base md:text-lg mb-10 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Manuel süreçlerinizi otomatikleştirin, operasyonel maliyetlerinizi düşürün 
-              ve işinizi ölçeklendirin.
+              Gambling sektöründe sürdürülebilir ve güvenli büyüme için 
+              uzman ekibimizle iletişime geçin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -706,7 +686,7 @@ function App() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold" style={{ fontFamily: 'Outfit', color: 'var(--text-main)' }}>
-                Cod<span style={{ color: 'var(--primary)' }}>Ege</span>
+                CodEge<span style={{ color: 'var(--primary)' }}>Soft</span>
               </span>
             </div>
             <div className="flex items-center gap-6">
@@ -723,7 +703,7 @@ function App() {
               </a>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-              © 2024 CodEge. Tüm hakları saklıdır.
+              © 2024 CodEgeSoft. Tüm hakları saklıdır.
             </p>
           </div>
         </div>
